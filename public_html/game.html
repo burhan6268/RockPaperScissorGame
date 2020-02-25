@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+Burhanuddin Lokhandwala
+Student Id - 991523243
+SYST-10199 - Web Programming
+-->
+<html>
+    <head>
+        <title>Let's Begin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-image: url(Game.jpg);background-repeat:no-repeat">
+        <div>
+            <center>
+                <input type='button' value="Begin" onclick="begin()" style="height:150px;width:150px;font-size:30px ; background-color: rgba(155,200,100,0.5)">
+            </center>
+            <a href='index.html'><input type='button' value="Exit" style="height:150px;width:150px;font-size:30px ; background-color: rgba(200,130,100,0.5)"></a>
+        </div>
+        <script>
+            function begin()
+            {
+                var result,mes=0,ais=0;
+                var ch=confirm("For Playing Press OK or Press Cancel");
+                
+                do
+                {
+                
+                alert("Select 1 for Rock\nSelect 2 for Paper\nSelect 3 for Scissor");
+                var me=prompt("Enter Your Choice");
+                var ai=Math.floor(Math.random() * (4-1) + 1 );
+                
+                    if(me==1||me==2||me==3)
+                    {  
+                        alert("User Choice " + me+" AI Choice "+ ai);
+                        if((me==1&&ai==1)||(me==2&&ai==2)||(me==3&&ai==3))
+                        {
+                            alert("Result Tie");
+                            mes+=0;
+                            ais+=0;
+                        }
+                        else if(me==1&&ai==2)
+                        {
+                            ais+=1;
+                            mes+=0;
+                            alert("AI = "+ais+" Me = "+mes);
+                        }
+                        else if(me==2&&ai==3)
+                        {
+                            ais+=1;
+                            mes+=0;
+                            alert("AI = "+ais+" Me = "+mes);
+                        }
+                        else if(me==3&&ai==1)
+                        {
+                            ais+=1;
+                            mes+=0;
+                            alert("AI = "+ais+" Me = "+mes);
+                        }
+                        else if(me==2&&ai==1)
+                        {
+                            ais+=0;
+                            mes+=1;
+                            alert("AI = "+ais+" Me = "+mes);
+                        }
+                        else if(me==3&&ai==2)
+                        {
+                            ais+=0;
+                            mes+=1;
+                            alert("AI = "+ais+"Me = "+mes);
+                        }
+                        else if(me==1&&ai==3)
+                        {
+                            ais+=0;
+                            mes+=1;
+                            alert("AI = "+ais+" Me = "+mes);
+                        }
+                        else
+                        {
+                        
+                        break;
+                        }
+                   }
+                   else if(me==null)
+                   {
+                       alert("Final Score as Below \nComputer = "+ais+"\nUser = "+mes);
+                       if(ais>mes)
+                           alert("AI Wins.");
+                       else if(ais==mes)
+                           alert("Draw.");
+                       else
+                           alert("You Win.");
+                       break;
+                   }
+                   else
+                   {
+                       alert("Invalid Choice , Please enter Proper Number!");
+                       continue;
+                   }
+                   
+                }while(ch!==false);
+               
+                }
+
+        </script>
+    </body>
+</html>
